@@ -68,6 +68,11 @@ for (const fileName of files) {
         mediaTag = `<video src="${filePath}" autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></video>`;
     }
 
+    const siteUrl = "https://shivshankar-curtain-mall-production.up.railway.app";
+    const absoluteImgUrl = `${siteUrl}/${filePath.split(' ').join('%20')}`;
+    const waText = encodeURIComponent(`Hello! I am interested in this product from your catalog:\n\n*Product:* ${title}\n*View Product:* ${absoluteImgUrl}\n\nCan you share more details?`);
+    const waLink = `https://wa.me/919860434182?text=${waText}`;
+
     const itemHtml = `
             <div class="catalog-item group bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all" data-category="${dataCategory}">
                 <div class="aspect-square overflow-hidden relative bg-surface-variant">
@@ -77,7 +82,7 @@ for (const fileName of files) {
                 <div class="p-4 md:p-6">
                     <h3 class="text-[16px] md:text-headline-sm font-bold font-headline-sm leading-tight text-on-surface mb-2">${title}</h3>
                     <p class="text-[12px] md:text-sm text-on-surface-variant mb-4 leading-snug hidden md:block">High quality furnishing from our collection.</p>
-                    <a href="https://wa.me/919860434182" class="w-full inline-flex items-center justify-center gap-2 border border-outline px-2 md:px-4 py-2 rounded-lg text-primary hover:bg-primary-container text-[12px] md:text-label-md font-label-md transition-all"><span class="material-symbols-outlined text-[16px] md:text-[18px]">chat</span> Inquire</a>
+                    <a href="${waLink}" target="_blank" class="w-full inline-flex items-center justify-center gap-2 border border-outline px-2 md:px-4 py-2 rounded-lg text-primary hover:bg-primary-container text-[12px] md:text-label-md font-label-md transition-all"><span class="material-symbols-outlined text-[16px] md:text-[18px]">chat</span> Inquire</a>
                 </div>
             </div>
 `;

@@ -2,3 +2,8 @@ node_modules/
 .DS_Store
 *.log
 .env
+
+# Backup files (DO NOT PUSH - restore when client pays)
+index_backup.html
+catalog_backup.html
+code_backup.html
